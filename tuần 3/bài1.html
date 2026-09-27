@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>List of devices</h2>
+    <table border="1">
+    <tr>
+        <th style="background-color: rgba(68, 101, 186, 0.892);" >Device</th>
+        <th style="background-color: rgba(68, 101, 186, 0.892);" >Brand</th>
+        <th style="background-color: rgba(68, 101, 186, 0.892);" colspan="3">Specifications</th>
+    </tr>
+    <tr>
+        <td rowspan="3">Smartphone</td>
+        <td rowspan="3">Apple</td>
+        <th style="background-color: yellow;">Model</th>
+        <th style="background-color: yellow;">Storage</th>
+    </tr>
+    <tr>
+       <td>iphone 12 pro</td>
+       <td>256GB</td>
+    </tr>
+    <tr>
+        <td>iphone SE</td>
+        <td>128GB</td>
+    </tr>
+    <tr>
+        <td>Laptop</td>
+        <td>HP</td>
+        <td colspan="2">15.6"Display</td>
+    </tr>
+    <tr>
+        <td>Tablet</td>
+        <td>Samsung</td>
+        <td colspan="2">10.5" Display</td>
+    </tr>
+    </table>
+
+   <h2>Registration Form</h2>
+    <table>
+      <form>
+        <tr>
+          <td><label for="user1">First name:</label></td>
+          <td>
+            <input id="user1" type="text" placeholder="Enter first name" />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="user2">Last name:</label>
+          </td>
+          <td>
+            <input type="text" id="user2" placeholder="Enter last name" />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="email">Email:</label>
+          </td>
+          <td>
+            <input type="text" id="email" placeholder="Enter email address" />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="pass">Password:</label>
+          </td>
+          <td><input type="password" id="pass" /></td>
+        </tr>
+
+        <tr>
+          <td><label for="">Gender:</label></td>
+          <td>
+            <label for=""><input type="radio" id="" />Male</label><br />
+            <label for=""><input type="radio" id="" />Female</label><br />
+            <label for=""><input type="radio" id="" />Other</label><br />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="">Age:</label>
+          </td>
+          <td>
+            <input type="number" />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="">Preferences:</label>
+          </td>
+          <td>
+            <label for=""><input type="checkbox" />Acrylic Painting</label
+            ><br />
+            <label for=""><input type="checkbox" />Oil Painting</label><br />
+            <label for=""><input type="checkbox" />Water Color Painting</label
+            ><br />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="">Select Occupation</label>
+          </td>
+          <td>
+            <select>
+              <option>Student</option>
+              <option>Lecturer</option>
+              <option>Other</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Bio</td>
+          <td>
+            <textarea
+              placeholder="Share few lines about yourself..."
+            ></textarea>
+          </td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td>
+            <input type="reset" value="Reset" />
+            <input type="submit" value="Submit" />
+          </td>
+        </tr>
+      </form>
+    </table>
+</body>
+</html>

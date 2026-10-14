@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vlu.edu.vn</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .school{display: flex;}
+    .image-item{
+            width: 200px;
+            height: 100px;
+            width: 35%;
+            margin: 8px;
+            border-radius: 8px;
+    }
+   .school-image{
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 15px;
+        transition:box-shadow 0.3s ease in-out
+    }
+    .school-image:hover{
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);}
+    .link{
+        color: red;
+        font-weight:bold;
+    }
+
+    </style>
+</head>
+<body>
+    <h2>Chương trình đào tạo</h2>
+    <div class="school">
+                <!--item1-->
+        <div class="image-item">
+            <img src="https://www.vlu.edu.vn/_next/image?url=https%3A%2F%2Fvluwebmedia.s3.ap-southeast-1.amazonaws.com%2Fundergra_8983faa549.jpg&w=3840&q=30" alt="photo" class="school-image">
+            <h3>Chương trình đại học</h3>
+            <p description>Chương trình toàn diện giúp hình thành và đẩy mạnh tư duy nghiên cứu ở người học, trang bị các kỹ năng hữu ích để phát triển sự nghiệp tương lai.</p>
+            <a href="https://www.vlu.edu.vn/academics#ungraduate_programs_content"class="link" target="_blank">Tìm hiểu chương trình đại học</a>
+        </div>
+                <!--item2-->
+        <div class="image-item">
+        <img src="https://www.vlu.edu.vn/_next/image?url=https%3A%2F%2Fvluwebmedia.s3.ap-southeast-1.amazonaws.com%2Fthac_si_a43df54097.jpg&w=3840&q=30" alt="photo" class="school-image">
+        <h3>Chương trình sau đại học</h3>
+        <p description>Chương trình đào tạo nâng cao, cung cấp tài nguyên học thuật và nghiên cứu phong phú để giúp người học tìm tòi sâu hơn vào lĩnh vực mong muốn.</p>
+        <a href="https://saudaihoc.vlu.edu.vn/" class=link target="_blank">Tìm hiểu chương trình sau đại học</a>
+        </div>
+                <!--item3-->
+        <div class="image-item">
+        <img src="https://www.vlu.edu.vn/_next/image?url=https%3A%2F%2Fvluwebmedia.s3.ap-southeast-1.amazonaws.com%2Finternational_2850120013.jpg&w=3840&q=30" alt="photo" class="school-image">
+        <h3>Chương trình VGS</h3>
+        <p description>Chương trình tạo cơ hội cho người học nhận bằng cấp từ các đại học hàng đầu thế giới và có thêm trải nghiệm với tư cách một công dân toàn cầu.</p>
+        <a href="https://www.vlu.edu.vn/academics#international_programs_content" class="link" target="blank">Tìm hiểu chương trình VGS</a> 
+        </div>                        
+    </div>
+</body>
+</html>

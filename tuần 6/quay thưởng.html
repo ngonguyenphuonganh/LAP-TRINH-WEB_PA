@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>document</title>
+</head>
+<body>
+  <h2>Quay thưởng may mắn</h2>
+  <button onclick="quayThuong()">Quay thưởng</button>
+  <p id="ketQuaQuay"></p>
+
+  <script>
+    const phanThuong = [
+      "Voucher 50k",
+      "Ly trà sữa",
+      "Chúc bạn may mắn lần sau",
+      "Tai nghe Bluetooth",
+      "Gấu bông"
+    ];
+
+    function quayThuong() {
+      const index = Math.floor(Math.random() * phanThuong.length);
+      document.getElementById("ketQuaQuay").innerText = "Phần thưởng nhận được: " + phanThuong[index];
+    }
+  </script>
+</body>
+</html>

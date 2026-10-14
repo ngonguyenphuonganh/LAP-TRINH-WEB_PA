@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>document</title>
+</head>
+<body>
+  <h2>Chuyển đổi nhiệt độ (°C sang °F)</h2>
+  <label>Nhiệt độ (°C): <input type="number" id="doC"></label>
+  <button onclick="chuyenDoi()">Chuyển đổi</button>
+
+  <p id="ketQuaNhietDo"></p>
+
+  <script>
+    function chuyenDoi() {
+      const c = parseFloat(document.getElementById("doC").value);
+      if (isNaN(c)) {
+        document.getElementById("ketQuaNhietDo").innerText = "Vui lòng nhập nhiệt độ hợp lệ!";
+        return;
+      }
+      const f = (9 / 5) * c + 32;
+      document.getElementById("ketQuaNhietDo").innerText = c + "°C = " + f.toFixed(2) + "°F";
+    }
+  </script>
+</body>
+</html>

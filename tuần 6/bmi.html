@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>document</title>
+</head>
+<body>
+  <h2>Tính chỉ số BMI</h2>
+  <label>Chiều cao (m): <input type="number" step="0.01" id="chieuCao" placeholder="VD: 1.65"></label><br><br>
+  <label>Cân nặng (kg): <input type="number" step="0.1" id="canNang" placeholder="VD: 55"></label><br><br>
+  <button onclick="tinhBMI()">Tính BMI</button>
+
+  <p id="ketQuaBMI"></p>
+
+  <script>
+    function tinhBMI() {
+      const h = parseFloat(document.getElementById("chieuCao").value);
+      const w = parseFloat(document.getElementById("canNang").value);
+
+      if (isNaN(h) || isNaN(w) || h <= 0 || w <= 0) {
+        document.getElementById("ketQuaBMI").innerText = "Dữ liệu không hợp lệ. Vui lòng nhập số dương!";
+        return;
+      }
+
+      const bmi = w / (h * h);
+      const bmiRounded = bmi.toFixed(2);
+
+      let danhGia = "";
+      if (bmi < 18.5) {
+        danhGia = "Gầy";
+      } else if (bmi < 25) {
+        danhGia = "Bình thường";
+      } else if (bmi < 30) {
+        danhGia = "Thừa cân";
+      } else {
+        danhGia = "Béo phì";
+      }
+
+      document.getElementById("ketQuaBMI").innerText = 
+        "Chỉ số BMI: " + bmiRounded + " - Kết luận: " + danhGia;
+    }
+  </script>
+</body>
+</html>

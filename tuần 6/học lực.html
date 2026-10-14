@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> Xếp Loại học lực</h2>
+    <lable for="">Nhập vào số điểm của bạn :</lable>
+    <input type="number" id="sodiem">
+    <button onclick="xeploai()">Xếp loại học lực</button>
+    <p id="ketqua">Kết quả xếp loại :</p>
+
+    <script>
+        function xeploai(){
+            let diem= parseFloat(document.getElementById("sodiem").value); 
+            let hienthi= document.getElementById("ketqua");
+
+        if (isNaN(diem) || diem < 0 || diem > 100) {
+        hienthi.innerText = "Vui lòng nhập điểm hợp lệ từ 0 đến 100!";
+        return;
+        }
+
+        let loai = "";
+        if (diem >= 90) {
+        loai = "A";
+        } else if (diem >= 80) {
+        loai = "B";
+        } else if (diem >= 70) {
+        loai = "C";
+        } else if (diem >= 60) {
+        loai = "D";
+        } else {
+            loai = "F";
+        }
+        hienthi.innerText = `Điểm: ${diem} => Xếp loại: ${loai}`;}
+    </script>
+</body>
+</html>

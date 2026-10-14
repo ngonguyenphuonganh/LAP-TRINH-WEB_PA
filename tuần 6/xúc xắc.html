@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>document</title>
+  <style>
+    .dice {
+      font-size: 80px;
+      line-height: 1;
+      margin: 15px 0;
+    }
+  </style>
+</head>
+<body>
+  <h2>Xúc xắc may mắn</h2>
+  <button onclick="lacXucXac()">Lắc xúc xắc</button>
+  
+  <div id="diceIcon" class="dice">🎲</div>
+  <h3 id="ketQua">Bấm nút để lắc xúc xắc</h3>
+
+  <script>
+    function lacXucXac() {
+      const diem = Math.floor(Math.random() * 6) + 1;
+      const matXucXac = ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
+      document.getElementById("diceIcon").innerText = matXucXac[diem - 1];
+      document.getElementById("ketQua").innerText = "Bạn đã lắc được: " + diem + " điểm!";
+    }
+  </script>
+</body>
+</html>

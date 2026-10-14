@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>document</title>
+</head>
+<body>
+  <h2>Máy tính đơn giản</h2>
+  <label>Số thứ nhất: <input type="number" id="num1"></label><br><br>
+  <label>Số thứ hai: <input type="number" id="num2"></label><br><br>
+
+  <button onclick="tinh('+')">+</button>
+  <button onclick="tinh('-')">-</button>
+  <button onclick="tinh('*')">*</button>
+  <button onclick="tinh('/')">/</button>
+
+  <p id="ketQuaMayTinh"></p>
+
+  <script>
+    function tinh(phepTinh) {
+      const a = parseFloat(document.getElementById("num1").value);
+      const b = parseFloat(document.getElementById("num2").value);
+      let ketQua = 0;
+
+      if (isNaN(a) || isNaN(b)) {
+        document.getElementById("ketQuaMayTinh").innerText = "Vui lòng nhập đủ 2 số!";
+        return;
+      }
+
+      switch (phepTinh) {
+        case '+': ketQua = a + b; break;
+        case '-': ketQua = a - b; break;
+        case '*': ketQua = a * b; break;
+        case '/':
+          if (b === 0) {
+            document.getElementById("ketQuaMayTinh").innerText = "Không thể chia cho 0!";
+            return;
+          }
+          ketQua = a / b;
+          break;
+      }
+      document.getElementById("ketQuaMayTinh").innerText = "Kết quả: " + ketQua;
+    }
+  </script>
+</body>
+</html>

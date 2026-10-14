@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h2>ĐOÁN SỐ MAY MẮN</h2> 
+    <lable for="">Nhập vào số bạn muốn(1-10)</lable>
+    <input type="number" id="sodoan" min="1" max="10">
+    <button onclick="kiemtra()">Kiểm tra may mắn</button>
+    <p id="ketqua">Kết quả con số bạn chọn :</p>
+
+    <script>
+        function kiemtra(){
+            let conso = parseInt (document.getElementById("sodoan").value,10);
+            let hienthi= document.getElementById("ketqua");
+
+        if (isNaN(conso) || conso < 1 || conso > 10) {
+        hienthi.innerText = " nhập một số từ 1 đến 10!";
+        return;
+        }
+        let sodoan = Math.floor(Math.random() * 10) + 1;
+
+        if (conso === sodoan) {
+        hienthi.innerText = `Chúc mừng bạn đã THẮNG!${sodoan}.`;
+        }else {
+        hienthi.innerText = `Chưa may mắn! Máy chọn số ${sodoan}, bạn chọn số ${conso}.`;}}
+    </script>
+</body>
+</html>

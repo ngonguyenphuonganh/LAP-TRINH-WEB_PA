@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>document</title>
+</head>
+<body>
+  <h2>Trò chơi Oẳn tù tì</h2>
+  <p>Hãy chọn một trong các nút:</p>
+  <button onclick="choi('Đá')">Đá</button>
+  <button onclick="choi('Giấy')">Giấy</button>
+  <button onclick="choi('Kéo')">Kéo</button>
+  <p id="ketQua"></p>
+
+  <script>
+    function choi(nguoiChon) {
+      const luaChon = ["Đá", "Giấy", "Kéo"];
+      const viTriNgauNhien = Math.floor(Math.random() * luaChon.length);
+      const mayChon = luaChon[viTriNgauNhien];
+
+      let ketQua = "";
+      if (nguoiChon === mayChon) {
+        ketQua = "Hòa!";
+      } else if (
+        (nguoiChon === "Đá" && mayChon === "Kéo") ||
+        (nguoiChon === "Giấy" && mayChon === "Đá") ||
+        (nguoiChon === "Kéo" && mayChon === "Giấy")
+      ) {
+        ketQua = "Bạn Thắng!";
+      } else {
+        ketQua = "Bạn Thua!";
+      }
+
+      document.getElementById("ketQua").innerHTML = 
+        `Bạn chọn: <b>${nguoiChon}</b> | Máy chọn: <b>${mayChon}</b><br>Kết quả: <b>${ketQua}</b>`;
+    }
+  </script>
+</body>
+</html>

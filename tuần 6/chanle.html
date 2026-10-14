@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> Kiểm tra số chẵn - số lẽ </h2>
+    <lable for="songuyen">Nhập số nguyên</lable>
+    <input type="number" id="songuyen">
+    <button onclick="kiemtra()">Kiểm tra</button>
+    <p id="ketqua"></p>
+
+    <script>
+        function kiemtra(){
+            let giatri=document.getElementById("songuyen").value;
+            let hienthi= document.getElementById("ketqua");
+
+            if (giatri==""){
+                hienthi.Innertext="Hãy nhập một số nguyên";
+                return
+            }
+        let n = parseInt(giatri, 10);
+        if (n % 2 === 0) {
+            hienthi.innerText = `Số ${n} là số chẵn.`;
+        } else {
+        hienthi.innerText = `Số ${n} là số lẻ.`;}
+        }
+    </script>
+</body>
+</html>

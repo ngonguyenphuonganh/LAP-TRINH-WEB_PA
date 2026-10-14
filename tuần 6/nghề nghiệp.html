@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>document</title>
+</head>
+<body>
+  <h2>Dự đoán nghề nghiệp</h2>
+  <label for="hoTen">Họ và tên:</label>
+  <input type="text" id="hoTen" placeholder="Nhập tên của bạn...">
+  <button onclick="duDoan()">Dự đoán</button>
+  <p id="ketQua"></p>
+
+  <script>
+    function duDoan() {
+      const ten = document.getElementById("hoTen").value.trim();
+      const hienThi = document.getElementById("ketQua");
+
+      if (!ten) {
+        hienThi.innerText = "Vui lòng nhập tên trước khi dự đoán!";
+        return;
+      }
+
+      const danhSachNghe = [
+        "Lập trình viên (Developer)",
+        "Thiết kế đồ họa (Designer)",
+        "Bác sĩ",
+        "Giáo viên",
+        "Phi công",
+        "Doanh nhân khởi nghiệp",
+        "Đầu bếp chuẩn Michelin",
+        "Chuyên viên dữ liệu (Data Scientist)"
+      ];
+
+      const indexNgauNhien = Math.floor(Math.random() * danhSachNghe.length);
+      const ngheNghiep = danhSachNghe[indexNgauNhien];
+
+      hienThi.innerHTML = `Xin chào <b>${ten}</b>, tương lai bạn có thể trở thành: <b>${ngheNghiep}</b>! ✨`;
+    }
+  </script>
+</body>
+</html>

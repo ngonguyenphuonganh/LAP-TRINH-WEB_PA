@@ -1,0 +1,14 @@
+function calculateGrade(scores) {
+  if (scores.length === 0) return undefined;
+  let sum = 0;
+  for (let i = 0; i < scores.length; i++) {
+    sum += scores[i];
+  }
+  let avg = sum / scores.length;
+  
+  if (avg >= 90) return 'A';
+  if (avg >= 80) return 'B';
+  if (avg >= 70) return 'C';
+  if (avg >= 60) return 'D';
+  return 'F';
+}

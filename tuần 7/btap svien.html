@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Bài tập: Quản Lý Sinh Viên</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Bài Tập: Quản Lý Sinh Viên</h1>
+  <div class="form-nhap">
+    <input type="text" id="mssv" placeholder="Mã SV (VD: SV001)">
+    <input type="text" id="hoten" placeholder="Họ tên">
+    <input type="text" id="lop" placeholder="Lớp (VD: CNTT01)">
+    <button id="btnThem" onclick="luuSinhVien()">Thêm</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Mã SV</th>
+        <th>Họ tên</th>
+        <th>Lớp</th>
+        <th>Thao tác</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+    </tbody>
+  </table>
+</div>
+
+<script>
+  let danhSachSV = [
+    { mssv: "SV001", hoten: "Nguyễn Văn A", lop: "CNTT01" },
+    { mssv: "SV002", hoten: "Trần Thị B",  lop: "CNTT02" },
+    { mssv: "SV003", hoten: "Lê Văn C",    lop: "CNTT01" }
+  ];
+
+  let dangSuaId = null;
+  const oMssv = document.getElementById("mssv");
+  const oHoten = document.getElementById("hoten");
+  const oLop = document.getElementById("lop");
+  const oBtnThem = document.getElementById("btnThem");
+  const oTableBody = document.getElementById("tableBody");
+
+ 
+  function timViTri(mssv) {
+    for (let i = 0; i < danhSachSV.length; i++) {
+      if (danhSachSV[i].mssv === mssv) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
+//2
+  function hienThiDanhSach() {
+    let html = "";
+    for (let i = 0; i < danhSachSV.length; i++) {
+      let sv = danhSachSV[i];
+      html += `
+        <tr>
+          <td>${sv.mssv}</td>
+          <td>${sv.hoten}</td>
+          <td>${sv.lop}</td>
+          <td>
+            <button class="btn-sua" onclick="suaSinhVien('${sv.mssv}')">Sửa</button>
+            <button class="btn-xoa" onclick="xoaSinhVien('${sv.mssv}')">Xóa</button>
+          </td>
+        </tr>
+      `;
+    }
+    oTableBody.innerHTML = html;
+  }
+
+//3
+  function luuSinhVien() {
+    let mssvMoi = oMssv.value;
+    let hotenMoi = oHoten.value;
+    let lopMoi = oLop.value;
+
+    let svMoi = { mssv: mssvMoi, hoten: hotenMoi, lop: lopMoi };
+
+    if (dangSuaId === null) {
+      // Đang THÊM MỚI
+      danhSachSV.push(svMoi);
+    } else {
+      // Đang CẬP NHẬT
+      let viTri = timViTri(dangSuaId);
+      if (viTri !== -1) {
+        danhSachSV[viTri] = svMoi;
+      }
+      dangSuaId = null;
+      oBtnThem.innerText = "Thêm";
+    }
+
+    // Xóa trắng ô input
+    oMssv.value = "";
+    oHoten.value = "";
+    oLop.value = "";
+
+    hienThiDanhSach();
+  }
+  
+  function xoaSinhVien(mssv) {
+    let viTri= timViTri(mssv);
+    if (viTri !==-1) {
+        danhSachSV.splice(viTri, 1);
+        hienThiDanhSach();
+    }
+
+  }
+  function suaSinhVien(mssv) {
+    let viTri = timViTri(mssv);
+    if (viTri !== -1) {
+      let sv = danhSachSV[viTri];
+      
+      // Đổ dữ liệu lên input
+      oMssv.value = sv.mssv;
+      oHoten.value = sv.hoten;
+      oLop.value = sv.lop;
+
+      // Đổi trạng thái sang Cập nhật
+      dangSuaId = mssv;
+      oBtnThem.innerText = "Cập nhật";
+    }
+  }
+  hienThiDanhSach();
+</script>
+
+</body>
+</html>
